@@ -27,6 +27,7 @@ This application is a simple proof-of-concept that shows PHP(Symfony), MySQL & E
 # Info
 
 - You may consider to look closely at some project files:
+
 1 - **fos_elastica.yaml** (config/packages/fos_elastica.yaml) - contains basic FOSElasticaBundle configuration with entity mappings (reports that will be persisted into Elasticsearch as JSON documents).
 
 2 - **ReportArticleCommentRepository.php** and **ReportUserCommentRepository** - responsible for calling stored procedures placed in MySQL database.
