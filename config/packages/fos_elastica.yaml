@@ -1,0 +1,44 @@
+fos_elastica:
+    clients:
+        default: { url: '%env(ELASTICSEARCH_URL)%' }
+    indexes:
+        user:
+            types:
+                user_report:
+                    properties:
+                        firstname:
+                            type: string
+                        lastname:
+                            type: string
+                        comment_amount:
+                            type: integer
+
+                    persistence:
+                        identifier: id
+                        driver: orm
+                        model: App\Entity\ReportUserComment
+                        repository: App\ElasticSearch\Repository\ReportUserCommentRepository
+                        provider: ~
+                        finder: ~
+
+        article:
+            types:
+                article_report:
+                    properties:
+                        article_id:
+                            type: integer
+                        article_title:
+                            type: string
+                        article_content:
+                            type: string
+                        comment_amount:
+                            type: integer
+
+                    persistence:
+                        identifier: id
+                        driver: orm
+                        model: App\Entity\ReportArticleComment
+                        repository: App\ElasticSearch\Repository\ReportArticleCommentRepository
+                        provider: ~
+                        finder: ~
+
